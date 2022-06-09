@@ -4,12 +4,6 @@
 
 #include <iostream>
 #include <fstream>
-
-#include "rapidjson/include/rapidjson/document.h"
-#include "rapidjson/include/rapidjson/writer.h"
-#include "rapidjson/include/rapidjson/stringbuffer.h"
-
-using namespace rapidjson;
 using namespace std;
 
 #if __RUN_PYTHON__
@@ -41,24 +35,16 @@ using namespace std;
 #endif
 
 #if __GRAPHICS_ENABLED__
-string outline = "";
+string line = "";
 string out = "";
-Document j;
-ifstream Reader("application/graphics/lib.json");
-void readandparse() {
-    while (getline (Reader, outline)) {
-        out += outline;
-    }
-    j.Parse(out);
-    #define __GRAPHICS_PARSED__
+ifstream Reader("application/graphics/lib.txt");
+while (getline(Reader, line)) {
+    out += line;
 }
+#include out
 #endif
 
 void startlink() {}
-
-#if __GRAPHICS_PARSED__
-#include j["file"]
-#endif
 
 void run() {
     #if __RUN_PYTHON__
@@ -81,8 +67,5 @@ void run() {
     #endif
     #if __RUN_CPP__
     cpp_app();
-    #endif
-    #if __GRAPHICS_ENABLED__
-        readandparse();
     #endif
 }
