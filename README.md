@@ -1,5 +1,7 @@
 # Info
 
+<i><b>THIS IS ONLY ONE PROJECT, USE THE EDITOR</b></i>
+
 Put your `.h` graphics file into `application/graphics`.
 
 ## Requirements
