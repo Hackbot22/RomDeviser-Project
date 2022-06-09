@@ -26,8 +26,8 @@ Put your `.h` graphics file into `application/graphics`.
 
 #### Graphics <i>(Optional)</i>
 1. Type `#define __GRAPHICS_ENABLED__`
-2. Create a file inside `application/graphics` named `lib.json`.
-3. Inside this file, type `{"file": "` your file `"}`.
+2. Create a file inside `application/graphics` named `lib.txt`.
+3. Inside this file, type the name of your file.
 
 ### Start programming:
 
